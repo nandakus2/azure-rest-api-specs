@@ -22,15 +22,16 @@ namespace Microsoft.NetApp;
  */
 @added(Versions.v2026_08_15_preview)
 @parentResource(PolicyGroup)
-model ExtendedSnapshotRetentionPolicy is Azure.ResourceManager.TrackedResource<
-  ExtendedSnapshotRetentionPolicyProperties,
-  false
-> {
+model ExtendedSnapshotRetentionPolicy
+  is Azure.ResourceManager.TrackedResource<
+    ExtendedSnapshotRetentionPolicyProperties,
+    false
+  > {
   ...ResourceNameParameter<
     Resource = ExtendedSnapshotRetentionPolicy,
     KeyName = "extendedSnapshotRetentionPolicyName",
     SegmentName = "extendedSnapshotRetentionPolicies",
-    NamePattern = "^[a-zA-Z0-9-]{1,63}"
+    NamePattern = "^[a-zA-Z0-9-]{1,63}$"
   >;
 }
 
